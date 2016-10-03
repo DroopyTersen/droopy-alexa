@@ -2,7 +2,7 @@
   "name": "droopy-alexa",
   "version": "1.0.0",
   "description": "Base template for an Amazon Echo Skill Service",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
