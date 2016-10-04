@@ -8,7 +8,7 @@ var app = express();
 
 // we need the body parser so we can get at the POST body that Amazon sends
 app.use(bodyParser.json());
-
+app.get("/", (req, res) => res.send("Hiya"));
 // Primary POST endpoint to configure your Alexa Skill with
 app.post("/alexa", function(req, res) {
     // Pass the POST body to the alexa skill
