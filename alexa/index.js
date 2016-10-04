@@ -2,7 +2,7 @@
 var AlexaSkill = require("alexa-app").app;
 
 // Create a new skill and register all of our intents
-var skill = new AlexaSkill("nutrition");
+var skill = new AlexaSkill("demo");
 require("./intents").setup(skill);
 
 // Output the Intent Schema and Utterances for easy pasting into the Amazon Skill Configuration

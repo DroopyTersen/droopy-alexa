@@ -1,5 +1,6 @@
 var intents = {
-    calorieCount: require("./calorieCount")
+    calorieCount: require("./calorieCount"),
+    getStockPrice: require("./getStockPrice")
 };
 
 // iterate through all the intents and register them with the skill
@@ -11,3 +12,4 @@ exports.setup = function(skill) {
         }, intent.handler);
     })
 };
+
