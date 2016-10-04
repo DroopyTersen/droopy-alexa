@@ -9,11 +9,22 @@ var app = express();
 // we need the body parser so we can get at the POST body that Amazon sends
 app.use(bodyParser.json());
 
-// Endpoint to configure your Alexa Skill with
+// Primary POST endpoint to configure your Alexa Skill with
 app.post("/alexa", function(req, res) {
     // Pass the POST body to the alexa skill
     respondAsync(alexaSkill.request(req.body), res);
 })
+
+// Output the schema 
+app.get("/alexa/schema", function(req, res){
+    var html = `<pre>${alexaSkill.schema()}</pre>`
+    res.send(html);
+})
+app.get("/alexa/utterances", function(req, res){
+    var html = `<pre>${alexaSkill.utterances()}</pre>`
+    res.send(html);
+})
+
 
 // Endpoint to test API service
 app.get("/nutrition/:search", function(req, res){
@@ -29,7 +40,8 @@ app.listen(config.port, process.env.IP, function() {
 
 // Helper function to wrap all promise requests in a catch to output the error message
 var respondAsync = function(promise, res) {
-    promise.then(result => res.send(result))
+    promise
+        .then(result => res.send(result))
         .catch(err => {
             console.log(err);
             res.send(err.message);
