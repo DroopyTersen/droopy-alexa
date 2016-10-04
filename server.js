@@ -12,12 +12,12 @@ app.use(bodyParser.json());
 // Endpoint to configure your Alexa Skill with
 app.post("/alexa", function(req, res) {
     // Pass the POST body to the alexa skill
-    promiseResponse(alexaSkill.request(req.body), res);
+    respondAsync(alexaSkill.request(req.body), res);
 })
 
 // Endpoint to test API service
 app.get("/nutrition/:search", function(req, res){
-    promiseResponse(nutritionApi.search(req.params.search), res);
+    respondAsync(nutritionApi.search(req.params.search), res);
 });
 
 
@@ -28,7 +28,7 @@ app.listen(config.port, process.env.IP, function() {
 
 
 // Helper function to wrap all promise requests in a catch to output the error message
-var promiseResponse = function(promise, res) {
+var respondAsync = function(promise, res) {
     promise.then(result => res.send(result))
         .catch(err => {
             console.log(err);
