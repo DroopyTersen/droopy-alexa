@@ -40,7 +40,7 @@ intent.handler = function(request, response) {
         response.session("phone-number", number);
         var message = request.slot("MESSAGE");
         if (!message) {
-            response.shouldEndSession(false, "What should it say?").send();
+            response.shouldEndSession(false, "What is the message?").send();
         } else {
             var payload = { value1: number, value2: message };
             makerService.trigger("send_text", payload).then(() => handleSuccess(payload, response));
