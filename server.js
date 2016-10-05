@@ -39,10 +39,10 @@ app.get("/stocks/:search", function(req, res){
     respondAsync(stocksApi.search(req.params.search), res);
 });
 
-app.get("/maker/:event", function(req, res) {
-    var event = req.params.event;
-    respondAsync(makerService.trigger(event, req.query), res);
-});
+// app.get("/maker/:event", function(req, res) {
+//     var event = req.params.event;
+//     respondAsync(makerService.trigger(event, req.query), res);
+// });
 
 // Start the web server on the specified port
 app.listen(config.port, process.env.IP, function() {

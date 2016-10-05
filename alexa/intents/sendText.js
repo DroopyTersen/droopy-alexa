@@ -15,12 +15,13 @@ var intent = {
 };
 
 var contacts = {
-    "Natalie": "2629301118",
+    "Natalie": "2623085576",
     "Mom": "2629392598",
     "Dad": "2629392018",
-    "Hannah": "2629301118",
-    "Brad Schlintz": "2629301118",
-    "Me": "2629301118"
+    "Hannah": "2629890412",
+    "Brad Schlintz": "9205851307",
+    "Me": "2629301118",
+    "Myself": "2629301118"
 };
 
 var findNumber = function(name) {
@@ -39,7 +40,7 @@ intent.handler = function(request, response) {
         response.session("phone-number", number);
         var message = request.slot("MESSAGE");
         if (!message) {
-            response.shouldEndSession(false, "What is the message?").send();
+            response.shouldEndSession(false, "What should it say?").send();
         } else {
             var payload = { value1: number, value2: message };
             makerService.trigger("send_text", payload).then(() => handleSuccess(payload, response));
@@ -58,7 +59,7 @@ var handleError = function(response, err) {
 };
 
 var handleSuccess = function(payload, response) {
-    var msg = `Done. Sent a text to <say-as interpret-as="digits">${payload.value1}</say-as>`
+    var msg = `Done. Sent to <say-as interpret-as="digits">${payload.value1}</say-as>`
     response.say(msg).send();
 }
 
