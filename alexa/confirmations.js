@@ -11,8 +11,8 @@ var phrases = [
 	"Okay",
 	"Finished",
 	"Got it",
+    "Aint No thing but a chicken wing",
 	"Success",
-    "Aint No thing but a chicken wing"
 ];
 
 module.exports = {
