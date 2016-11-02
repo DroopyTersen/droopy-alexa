@@ -1,7 +1,8 @@
 var intents = {
-    calorieCount: require("./calorieCount"),
+    // calorieCount: require("./calorieCount"),
     getStockPrice: require("./getStockPrice"),
-    sendText: require("./sendText")
+    togglePower: require("./togglePower")
+    // sendText: require("./sendText")
 };
 
 // iterate through all the intents and register them with the skill

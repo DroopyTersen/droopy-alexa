@@ -1,11 +1,9 @@
 var bodyParser = require("body-parser");
 var express = require("express");
 var alexaSkill = require("./alexa");
-var nutritionApi = require("./services/nutritionApi");
-var makerService = require("./services/makerService");
 
 var stocksApi = require("./services/stocksApi");
-var config = { port: process.env.PORT || 3000 };
+var config = { port: process.env.PORT || 3005 };
 
 var app = express();
 
@@ -28,21 +26,6 @@ app.get("/alexa/utterances", function(req, res){
     var html = `<pre>${alexaSkill.utterances()}</pre>`
     res.send(html);
 })
-
-
-// Endpoint to test API service
-app.get("/nutrition/:search", function(req, res){
-    respondAsync(nutritionApi.search(req.params.search), res);
-});
-
-app.get("/stocks/:search", function(req, res){
-    respondAsync(stocksApi.search(req.params.search), res);
-});
-
-// app.get("/maker/:event", function(req, res) {
-//     var event = req.params.event;
-//     respondAsync(makerService.trigger(event, req.query), res);
-// });
 
 // Start the web server on the specified port
 app.listen(config.port, process.env.IP, function() {
