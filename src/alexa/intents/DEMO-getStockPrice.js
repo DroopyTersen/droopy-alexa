@@ -1,9 +1,17 @@
-var stocksApi = require("../../services/stocksApi");
+var stocksApi = require("../../services/stocksDemo");
 
 var intent = {
     name: "GetStockPrice",
+    slotTypes: {
+        "COMPANY_NAMES": [
+            "Microsoft",
+            "Abbot Labs",
+            "Tesla",
+            "Wells Fargo"
+        ]
+    },
     slots: {
-        //FOOD_TYPES will need to be configured as a custom slot type
+        //COMPANY_NAMES will need to be configured as a custom slot type
         "COMPANY": "COMPANY_NAMES" 
     },
     utterances: [

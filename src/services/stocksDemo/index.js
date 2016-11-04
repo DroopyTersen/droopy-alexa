@@ -17,6 +17,7 @@ var getPrice = exports.getPrice = function(symbol) {
 exports.search = function(company) {
     console.log(company);
     return findSymbol(company).then(stock => {
+        if (stock === null) throw new Error(`Unable to find stock symbol for '${company}'`);
         return getPrice(stock.symbol).then(result => Object.assign({}, stock, result));
     });
 };
