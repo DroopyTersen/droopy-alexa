@@ -1,4 +1,5 @@
-# Alexa Office 365 Skill
+# Droopy Alexa
+A project skeleton to get you up and running with a custom Amazon Alexa Skill.
 
 
 ## Useful links
