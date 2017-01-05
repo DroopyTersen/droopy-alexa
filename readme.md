@@ -2,7 +2,7 @@
 A project skeleton to get you up and running with a custom Amazon Alexa Skill.
 
 ## 0 to Alexa 
-Here are the high level steps to get started with the demo stock price intent.
+Here are the high level steps to get started with the demo stock price intent. Read below for more details on each step.
 
 1. Clone the project, install dependencies, and launch the local web service
 2. Open up your localhost to the internet with NGROK
