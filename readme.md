@@ -1,9 +1,18 @@
 # Droopy Alexa
 A project skeleton to get you up and running with a custom Amazon Alexa Skill.
 
+## 0 to Alexa 
+Here are the high level steps to get started with the demo stock price intent.
+
+1. Clone the project, install dependencies, and launch the local web service
+2. Open up your localhost to the internet with NGROK
+3. Log into the Amazon developer portal and create a new skill
+ * Setup the intents, utterances you see with you go to `/alexa`
+ * Configure the demo `COMPANY_NAMES` custom slot type
+ * Setup service url to be `https://NGROK_URL/alexa`
+4. "Alexa ask MY_SKILL_NAME for the stock price of Microsoft" 
 
 ## Useful links
-* [VSTS Work Items](https://skyline.visualstudio.com/Skyline-DevCamp-Alexa/_backlogs/board/Backlog%20items)
 * [Amazon Custom Skill Developer Portal](https://developer.amazon.com/edw/home.html#/skills/list)
 * [Azure Web Service](https://alexa-demo.azurewebsites.net)
 * [Amazon - Steps to build a custom Alexa Skill](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/overviews/steps-to-build-a-custom-skill)
@@ -17,7 +26,7 @@ A project skeleton to get you up and running with a custom Amazon Alexa Skill.
 
 ### Recommended Installs
 * [Visual Studio Code](http://code.visualstudio.com) - Great node.js debugging
-* [ngrok](https://www.npmjs.com/package/ngrok) - Temporarily make your local web server publically accessible w/ https
+* [ngrok](https://www.npmjs.com/package/ngrok) - Temporarily make your local web server publically accessible w/ https. This way Alexa can talk straight to your local web service instead of having to deploy to Azure.
     * Install: `npm install -g ngrok`
     * Usage (host port 3000): `ngrok http 3000`
 
@@ -50,4 +59,4 @@ You can type `npm run start` from the terminal, or hit F5 in VS Code to debug it
 ## Utterance builder
 Typing out all the different ways a user might want to trigger an intent can be very tedious.  To help, I've built an Utterance Builder GUI. It can be accessed at `/alexa/tools`.
 
-![Utterance Builder](docs/utterancebuilder.png)
+![Utterance Builder](https://github.com/DroopyTersen/droopy-alexa/blob/master/docs/utterancebuilder.PNG)
